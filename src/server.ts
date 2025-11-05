@@ -1,15 +1,10 @@
-import express, { Application } from "express";
+import app from "./app";
+import dotenv from "dotenv";
 
-const app: Application = express();
+dotenv.config();
+
 const PORT = process.env.PORT || 5000;
 
-app.use(express.json());
-
-// Basic route
-app.get("/", (req, res) => {
-  res.send("🚀 TaskFlow API is running!");
-});
-
 app.listen(PORT, () => {
-  console.log(`✅ Server started on http://localhost:${PORT}`);
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
